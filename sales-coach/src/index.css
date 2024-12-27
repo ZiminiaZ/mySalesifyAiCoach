@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Original text glow effect */
+  .text-glow {
+    text-shadow:  0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #ff007f;
+  }
+
+  /* New rainbow glow effect */
+ .rainbow-glow {
+    background-image: linear-gradient(90deg, #ff007f, #ff7f00, #ffff00, #00ff00, #0000ff, #800080);
+    background-size: 300%;
+    background-clip: text;
+    color: transparent; /* Make text color transparent to show the gradient */
+    animation: rainbow-glow 4s ease-in-out infinite;
+  }
+
+  /* Keyframes for the rainbow text color animation */
+  @keyframes rainbow-glow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+  
+*{
+  font-family: 'Courier New', Courier, monospace;
+}
